@@ -16,7 +16,7 @@ public abstract class SteakHandler {
     }
 
     public Result cookSteak(CookSteak steak) {
-        if (steak.getCondition() == steakCondition) {
+        if (steak.getCondition().ordinal() <= steakCondition.ordinal()) {
             return cook(steak);
         } else return nextHandler.cookSteak(steak);
     }
