@@ -12,11 +12,14 @@ import org.springframework.stereotype.Service;
 @Service
 @Order(2)
 public class MediumSteakHandler extends SteakHandler {
+
+    protected MediumSteakHandler() {
+        super(SteakCondition.MEDIUM);
+    }
+
     @Override
     public Result cook(CookSteak steak) {
         log.info("Начали готовить медиум");
-        if (steak.getCondition() == SteakCondition.MEDIUM)
-            return new Result("Ваш идеальный стейк готов");
-        return nextHandler.cook(steak);
+        return new Result("Ваш идеальный стейк готов");
     }
 }

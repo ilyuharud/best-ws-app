@@ -3,7 +3,7 @@ package com.github.ilyuharud.best_ws_app.service.command.impl;
 import com.github.ilyuharud.best_ws_app.dto.actions.ActionType;
 import com.github.ilyuharud.best_ws_app.dto.actions.CookBaseAction;
 import com.github.ilyuharud.best_ws_app.dto.result.Result;
-import com.github.ilyuharud.best_ws_app.service.chain.SteakSender;
+import com.github.ilyuharud.best_ws_app.service.chain.SteakCooker;
 import com.github.ilyuharud.best_ws_app.service.command.CookCommand;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class SteakCommand implements CookCommand {
 
-    private final SteakSender steakSender;
+    private final SteakCooker steakSender;
 
     @Override
     public String getType() {

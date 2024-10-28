@@ -11,7 +11,7 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class SteakSender {
+public class SteakCooker {
 
     private final List<SteakHandler> steakHandlers;
 
@@ -23,6 +23,6 @@ public class SteakSender {
     }
 
     public Result send(CookBaseAction action) {
-        return steakHandlers.getFirst().cook((CookSteak) action);
+        return steakHandlers.getFirst().cookSteak((CookSteak) action);
     }
 }

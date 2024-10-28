@@ -13,11 +13,13 @@ import org.springframework.stereotype.Service;
 @Order(1)
 public class RareSteakHandler extends SteakHandler {
 
+    protected RareSteakHandler() {
+        super(SteakCondition.RARE);
+    }
+
     @Override
     public Result cook(CookSteak steak) {
         log.info("Начали готовить рейр");
-        if (steak.getCondition() == SteakCondition.RARE)
-            return new Result("Ваш стейк с кровью готов");
-        else return nextHandler.cook(steak);
+        return new Result("Ваш стейк с кровью готов");
     }
 }

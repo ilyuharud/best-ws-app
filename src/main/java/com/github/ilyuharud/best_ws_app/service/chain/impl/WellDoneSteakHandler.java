@@ -13,11 +13,13 @@ import org.springframework.stereotype.Service;
 @Order(3)
 public class WellDoneSteakHandler extends SteakHandler {
 
+    protected WellDoneSteakHandler() {
+        super(SteakCondition.WELL_DONE);
+    }
+
     @Override
     public Result cook(CookSteak steak) {
         log.info("Началась готовка подошвы");
-        if (steak.getCondition() == SteakCondition.WELL_DONE)
-            return new Result("Ваша подошва готова");
-        throw new IllegalStateException("Стейк сгорел");
+        return new Result("Ваша подошва готова");
     }
 }
